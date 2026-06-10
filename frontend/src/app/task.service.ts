@@ -8,21 +8,21 @@ export class TaskService {
   constructor(private http: HttpClient) { }
 
   fetchTasks(userID: string) {
-    return this.http.get(`http://localhost:5259/api/tasks/${userID}`);
+    return this.http.get(`https://ai-task-manager-5hpa.onrender.com/api//tasks/${userID}`);
   }
 
   processTasks(input: string, userID: string) {
     return this.http.post(
-      'http://localhost:5259/api/tasks',
+      'https://ai-task-manager-5hpa.onrender.com/api/tasks',
       { input: input, userID: userID }
     );
   }
 
   markComplete(id: number) {
-    return this.http.put(`https://localhost:5259/api/tasks/complete/${id}`, {});
+    return this.http.put(`https://ai-task-manager-5hpa.onrender.com/api/tasks/complete/${id}`, {});
   }
 
   update(id: number, task: any) {
-    return this.http.put(`https://localhost:5259/api/tasks/update/${id}`, task);
+    return this.http.put(`https://ai-task-manager-5hpa.onrender.com/api/tasks/update/${id}`, task);
   }
 }
