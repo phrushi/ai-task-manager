@@ -10,7 +10,11 @@ export class TaskService {
   public apiUrl: string = 'https://ai-task-manager-5hpa.onrender.com/api';
 
   fetchTasks(userID: string) {
-    return this.http.get(`${this.apiUrl}/tasks/${userID}`);
+      const url = `${this.apiUrl}/tasks/${userID}`;
+
+    console.log("API URL:", this.apiUrl);
+    console.log("FETCH URL:", url);
+    return this.http.get(url);
   }
 
   processTasks(input: string, userID: string) {
