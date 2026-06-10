@@ -8,7 +8,7 @@ export class TaskService {
   constructor(private http: HttpClient) { }
 
   fetchTasks(userID: string) {
-    return this.http.get(`https://ai-task-manager-5hpa.onrender.com/api//tasks/${userID}`);
+    return this.http.get(`https://ai-task-manager-5hpa.onrender.com/api/tasks/${userID}`);
   }
 
   processTasks(input: string, userID: string) {
