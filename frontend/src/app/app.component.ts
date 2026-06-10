@@ -87,7 +87,7 @@ export class AppComponent implements OnInit {
 // }
 
 ngOnInit(): void {
-
+console.log("VERSION 2026-06-10-TEST");
   console.log('ngOnInit called');
 
   this.isLoading = true;
