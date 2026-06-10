@@ -1,0 +1,78 @@
+<div *ngIf="!user" class="login-page">
+  <div class="login-card">
+    <div class="logo">✨</div>
+    <h1>AI Tasks</h1>
+    <p>Turn your thoughts into actionable tasks with AI</p>
+    <button class="google-btn" type="button" (click)="login()">
+      <img src="https://www.svgrepo.com/show/475656/google-color.svg" />
+      Continue with Google
+    </button>
+  </div>
+</div>
+
+<div class="top-bar" *ngIf="!isLoading && user">
+  <!-- LEFT SIDE -->
+  <div class="brand">
+    <h1>✨ AI Tasks</h1>
+    <p>Turn your thoughts into actionable tasks</p>
+  </div>
+  <!-- RIGHT SIDE -->
+  <div class="right-section">
+    <span class="avatar">
+      {{ user.email[0] | uppercase }}
+    </span>
+    <button class="logout-btn" type="button" (click)="logout()">Logout</button>
+  </div>
+</div>
+
+<div class="page" *ngIf="!isLoading && user">
+  <div class="content">
+    <!-- INPUT -->
+    <div class="input-card">
+      <textarea [(ngModel)]="inputText" placeholder="What do you want to get done today?"></textarea>
+      <button class="generate-btn" (click)="process()">Generate</button>
+    </div>
+    <!-- TASK LIST -->
+    <div class="task-card">
+      <div class="task-header">
+        <h3>Your Tasks</h3>
+        <span>{{ tasks.length }} items</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Task</th>
+            <th>Priority</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let t of tasks">
+
+            <td class="actions">
+              <input type="checkbox" [checked]="t.is_Completed" (change)="onComplete(t.id)">
+              <button *ngIf="!t.editing" (click)="startEdit(t)" class="icon-btn">✏️</button>
+              <button *ngIf="t.editing" (click)="saveEdit(t)" class="icon-btn save">✔</button>
+              <button *ngIf="t.editing" (click)="cancelEdit(t)" class="icon-btn cancel">✖</button>
+            </td>
+
+            <td *ngIf="editingId !== t.id" class="task">{{ t.task }}</td>
+
+            <td *ngIf="editingId === t.id">
+              <input [(ngModel)]="editTaskText" class="edit-input" />
+            </td>
+
+            <td>
+              <span class="badge" [ngClass]="t.priority.toLowerCase()">
+                {{ t.priority }}
+              </span>
+            </td>
+
+            <td class="category">{{ t.category }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

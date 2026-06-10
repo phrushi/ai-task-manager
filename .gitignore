@@ -1,0 +1,20 @@
+# Angular
+node_modules/
+.angular/
+dist/
+
+# .NET
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Environment files
+.env
+
+# Logs
+*.log
+backend/TodoAI.API/appsettings.Development.json

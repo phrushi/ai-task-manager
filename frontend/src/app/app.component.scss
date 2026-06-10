@@ -1,0 +1,398 @@
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-size: 16px;
+  /* 🔥 BIGGER BASE FONT */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===== TOP BAR ===== */
+* {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 30px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  background: #6366f1;
+  color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.email {
+  color: white;
+  font-size: 14px;
+}
+
+/* Logout */
+.logout-btn {
+  background: #111827;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background: #1f2937;
+}
+
+/* ===== PAGE LAYOUT ===== */
+.page {
+  width: 100%;
+  margin-top: -10px;
+}
+
+.content {
+  max-width: 1100px;
+  /* 🔥 wider */
+  margin: 20px auto;
+  padding: 0 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  color: white;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 34px;
+  /* 🔥 bigger */
+  font-weight: 600;
+}
+
+.header p {
+  margin-top: 6px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* ===== INPUT ===== */
+.input-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  /* glass effect */
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 14px;
+  font-size: 15px;
+  resize: none;
+}
+
+/* Button */
+.generate-btn {
+  align-self: flex-end;
+  background: #111827;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.generate-btn:hover {
+  background: #1f2937;
+}
+
+/* ===== TASK CARD ===== */
+.task-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.task-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  /* enforce */
+}
+
+.task-header span {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  font-size: 13px;
+  color: #94a3b8;
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 14px 0;
+  border-top: 1px solid #f1f5f9;
+  font-size: 15px;
+}
+
+/* Hover */
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Task */
+.task {
+  font-weight: 500;
+}
+
+/* Edit input */
+.edit-input {
+  width: 80%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+/* Category */
+.category {
+  color: #6b7280;
+}
+
+/* ===== BADGES ===== */
+.badge {
+  padding: 5px 12px;
+  font-size: 13px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.low {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.medium {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.high {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* ===== ACTIONS ===== */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.icon-btn.save {
+  color: green;
+}
+
+.icon-btn.cancel {
+  color: red;
+}
+
+// login page
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 🔥 Modern gradient */
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Inter', sans-serif;
+}
+
+.login-card {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+
+  width: 360px;
+  text-align: center;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+  animation: fadeIn 0.5s ease;
+}
+
+.logo {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.login-card h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.login-card p {
+  color: #6b7280;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+/* 🔥 Premium Google button */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 100%;
+  padding: 14px;
+
+  border-radius: 10px;
+  border: none;
+
+  background: #111827;
+  color: white;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.google-btn img {
+  width: 18px;
+  background: white;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.google-btn:hover {
+  background: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// end login page
+
+// logout
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background: transparent;
+  /* 🔥 important */
+}
+
+/* LEFT SIDE */
+.brand h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.brand p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* RIGHT SIDE */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Avatar */
+.avatar {
+  background: #6366f1;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Logout */
+.logout-btn {
+  background: #111827;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+// end logout
