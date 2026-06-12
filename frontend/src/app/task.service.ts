@@ -7,8 +7,8 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
-  // public apiUrl: string = 'https://ai-task-manager-5hpa.onrender.com/api';
-  public apiUrl: string = 'http://localhost:5259/api';
+   public apiUrl: string = 'https://ai-task-manager-5hpa.onrender.com/api';
+  //public apiUrl: string = 'http://localhost:5259/api';
 
   fetchTasks(userID: string) {
       const url = `${this.apiUrl}/tasks/${userID}`;
