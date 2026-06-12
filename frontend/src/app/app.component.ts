@@ -123,14 +123,14 @@ console.log("VERSION 2026-06-10-TEST");
   }
 
   process() {
-    this.service.processTasks(this.inputText, this.user.userID)
+    this.service.processTasks(this.inputText, this.user.id)
       .subscribe((res: any) => {
         this.loadTasks(this.user.id);
       });
   }
 
-  onComplete(id: number) {
-    this.service.markComplete(id)
+  onDelete(id: number) {
+    this.service.delete(id)
       .subscribe(() => {
         this.loadTasks(this.user.id);
       });

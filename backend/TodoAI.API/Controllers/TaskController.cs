@@ -80,6 +80,8 @@ public class TaskController : ControllerBase
         if (updated == null)
             return BadRequest("AI failed");
 
+        updated.Task = task.Task;
+
         var connString = _config.GetConnectionString("DefaultConnection");
 
         using var conn = new NpgsqlConnection(connString);
@@ -100,6 +102,25 @@ public class TaskController : ControllerBase
         await cmd.ExecuteNonQueryAsync();
 
         return Ok(updated);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteTask(int id)
+    {
+        var connString = _config.GetConnectionString("DefaultConnection");
+
+        using var conn = new NpgsqlConnection(connString);
+        await conn.OpenAsync();
+
+        var cmd = new NpgsqlCommand(@"
+        DELETE from tasks
+        WHERE id = @id", conn);
+        cmd.Parameters.AddWithValue("id", id);
+
+        await cmd.ExecuteNonQueryAsync();
+
+        return Ok(true);
+
     }
 
     private async Task SaveTasksToDb(List<TaskItem> tasks, string userID)

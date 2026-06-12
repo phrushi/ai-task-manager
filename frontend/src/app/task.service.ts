@@ -7,7 +7,8 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
-  public apiUrl: string = 'https://ai-task-manager-5hpa.onrender.com/api';
+  // public apiUrl: string = 'https://ai-task-manager-5hpa.onrender.com/api';
+  public apiUrl: string = 'http://localhost:5259/api';
 
   fetchTasks(userID: string) {
       const url = `${this.apiUrl}/tasks/${userID}`;
@@ -24,8 +25,8 @@ export class TaskService {
     );
   }
 
-  markComplete(id: number) {
-    return this.http.put(`${this.apiUrl}/tasks/complete/${id}`, {});
+  delete(id: number) {
+    return this.http.delete(`${this.apiUrl}/tasks/${id}`, {});
   }
 
   update(id: number, task: any) {

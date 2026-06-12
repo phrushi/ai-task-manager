@@ -51,8 +51,8 @@
           <tr *ngFor="let t of tasks">
 
             <td class="actions">
-              <input type="checkbox" [checked]="t.is_Completed" (change)="onComplete(t.id)">
-              <button *ngIf="!t.editing" (click)="startEdit(t)" class="icon-btn">✏️</button>
+              <span  style="cursor: pointer; color: red;"  title="Delete" (click)="onDelete(t.id)">❌</span>
+              <button *ngIf="!t.editing" (click)="startEdit(t)" class="icon-btn" title="Edit">✏️</button>
               <button *ngIf="t.editing" (click)="saveEdit(t)" class="icon-btn save">✔</button>
               <button *ngIf="t.editing" (click)="cancelEdit(t)" class="icon-btn cancel">✖</button>
             </td>
